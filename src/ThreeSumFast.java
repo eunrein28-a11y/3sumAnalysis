@@ -10,6 +10,14 @@ public class ThreeSumFast {
     public static int count(int[] a) {
         int count = 0;
         //TODO: Finish THreeSumFast by first using Array.sort then use BinarySearch to help find the thrid number
+        Arrays.sort(a);
+        for(int i = 0; i < a.length; i++){
+            for(int j = i + 1; j < a.length; j++){
+                if(a[i] + a[j] + BinarySearch.indexOf(a, a[j] + a[i]) == 0){
+                    count++;
+                }
+            }
+        }
 
         return count;
 
